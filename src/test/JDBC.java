@@ -233,7 +233,24 @@ public class JDBC {
     	// System.out.println(searchDaySum(1, Date.valueOf("2020-01-01"), Date.valueOf("2020-01-01")));
 
 		// ! search Day List test
-		// System.out.println(searchDayList(1, Date.valueOf("2020-01-01"), Date.valueOf("2020-01-01")));
+
+		//expense, expenseDate, content, category, bank
+		List a = searchDayList(1, Date.valueOf("2020-01-01"), Date.valueOf("2020-01-01"));
+		for(int i = 0; i < a.size(); i ++){
+			Map map = (Map) a.get(i);
+			if(map.get("expense") != null) {
+				System.out.println(map.get("expense") + "\t" + map.get("expenseDate") + "\t" + map.get("content")
+						+ "\t" + map.get("category") + "\t" + map.get("bank"));
+			}
+			else if(map.get("income") != null){
+				System.out.println(map.get("income") + "\t" + map.get("incomeDate") + "\t" + map.get("content")
+						+ "\t" + map.get("category") + "\t" + map.get("bank"));
+			}
+		}
+
+
+
+
 
     	// ! add Income test
     	// addIncome(1, 7000, Date.valueOf("2020-01-01"), "bb", "cc", 1);
